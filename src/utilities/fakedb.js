@@ -13,10 +13,13 @@ const addtodb =(id) =>{
 
 }
 const getMealcart = () =>{
-    let mealCart = {}
+    let mealCart
     const storedCart = localStorage.getItem('meal-cart')
     if(storedCart){
         mealCart = JSON.parse(storedCart)
+    }
+    else{
+        mealCart ={}
     }
     return mealCart
 }

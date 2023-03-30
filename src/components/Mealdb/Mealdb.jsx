@@ -22,8 +22,6 @@ const Mealdb = () => {
         for(const  id in storedCart ){
             const addedmeal = meals.find(pd => pd.idMeal === id)
             if(addedmeal){
-                const quantity = storedCart[id]
-                addedmeal.strMeal = quantity
                 savedCart.push(addedmeal)
             }
         }
@@ -47,7 +45,14 @@ const Mealdb = () => {
          newCart =[...remaining,exist]
 
        } */
-        setCart(meal)
+       const getcart = cart.find(pd => pd.idMeal === meal.idMeal)
+       if(getcart){
+        
+       }
+      
+
+       const newcart = [...cart,meal]
+        setCart(newcart)
         addtodb(meal.idMeal)
     }
     return (
